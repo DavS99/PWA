@@ -1,14 +1,22 @@
-import {useState} from 'react';
-import logo from './logo.svg';
+import {useEffect} from 'react';
 import './App.css';
+import firebase from "firebase/messaging";
 
 function App() {
-    const [mode, setMode] = useState('online');
+
+    useEffect(() => {
+        // firebase.getMessaging()
+        // const msg=firebase.getMessaging();
+        // msg.requestPermission().then(()=>{
+        //   return msg.getToken();
+        // }).then((data)=>{
+        //   console.warn("token",data)
+        // })
+    }, []);
 
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
@@ -18,7 +26,6 @@ function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    {mode === 'offline' ? <div>You are offline mode</div> : <div>You are online</div>}
                 </a>
             </header>
         </div>
